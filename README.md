@@ -23,12 +23,12 @@ dpg.create_viewport()
 dpg.setup_dearpygui()
 
 with dpg.window(tag="Axis", label="Axis", width=400, pos=(800,0)):
-    is_ready = ReadOnly(name="is_ready", creator=dpg.add_checkbox, callback=lambda: drv.ax0.encoder.is_ready)
+    is_ready = ReadOnly(name="is_ready", creator=dpg.add_checkbox, callback=lambda: drv.axis0.encoder.is_ready)
 
 with dpg.window(tag="Encoder", label="Encoder", width=400):
 
-    pos_estimate = ReadOnly(name="pos_estimate", creator=dpg.add_input_float, callback=lambda: drv.ax0.encoder.pos_estimate)
-    vel_estimate = ReadOnly(name="vel_estimate", creator=dpg.add_input_float, callback=lambda: drv.ax0.encoder.vel_estimate)
+    pos_estimate = ReadOnly(name="pos_estimate", creator=dpg.add_input_float, callback=lambda: drv.axis0.encoder.pos_estimate)
+    vel_estimate = ReadOnly(name="vel_estimate", creator=dpg.add_input_float, callback=lambda: drv.axis0.encoder.vel_estimate)
 
 dpg.show_viewport()
 
@@ -40,6 +40,5 @@ while dpg.is_dearpygui_running():
 
 
 dpg.destroy_context()
-
 
 ```
